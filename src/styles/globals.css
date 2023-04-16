@@ -98,9 +98,11 @@ width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  align-items: center;
+  gap: 10px;
   margin-top: 20px;
   width: 100%;
+ 
 }
 .product-card{
  cursor: pointer;
