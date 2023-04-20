@@ -16,7 +16,7 @@ const Cart = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin":"NO",
+        // "Access-Control-Allow-Origin":"NO",
 
       },
       body: JSON.stringify(cartItems),
