@@ -12,23 +12,25 @@ const Cart = () => {
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
-    const response = await fetch('/api/stripe', {
+    const response = await fetch ('/api/stripe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin":"NO",
+
       },
       body: JSON.stringify(cartItems),
     });
-
+    console.log(response)
     if(response.statusCode === 500) return;
     
     const data = await response.json();
-    console.log(data);
 
     toast.loading('Redirecting...');
 
     stripe.redirectToCheckout({ sessionId: data.id });
   }
+
 
   return (
     <div className='cart-wrapper' ref={cartRef}>
